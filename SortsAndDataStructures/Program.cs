@@ -8,5 +8,8 @@ namespace SortsAndDataStructures
 		{
 			Console.WriteLine ("Hello World!");
 		}
+        static void RunMySorts(){
+            SelectionSorter sorter = new SelectionSorter();
+        }
 	}
 }
