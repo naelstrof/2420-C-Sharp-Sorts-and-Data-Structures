@@ -1,8 +1,12 @@
 ﻿class SelectionSorter{
-    public void Sort(int[] ints){
-        
+	public int[] Sort(int[] ints){
+		for ( int i=0;i<ints.Length;i++ ) {
+			int leastIndex = this.findLowestValueIndex(ints, i);
+			this.swap(ints, i, leastIndex);
+		}
+		return ints
     }
-    public void Swap(int index1, int index2, int[] ints){
+    public void swap(int index1, int index2, int[] ints){
         ints[index1] ^= ints[index2];
         ints[index2] ^= ints[index1];
         ints[index1] ^= ints[index2];

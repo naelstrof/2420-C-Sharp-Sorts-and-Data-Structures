@@ -1,1 +1,12 @@
-﻿<Properties StartupItem="SortsAndDataStructures/SortsAndDataStructures.csproj" />
+﻿<Properties StartupItem="SortsAndDataStructures/SortsAndDataStructures.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="SortsAndDataStructures/Program.cs">
+    <Files>
+      <File FileName="SortsAndDataStructures/Program.cs" Line="4" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
