@@ -36,6 +36,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sorts\InsertionSorter.cs" />
+    <Compile Include="Sorts\MergeSorter.cs" />
     <Compile Include="Sorts\SelectionSorter.cs" />
     <Compile Include="Sorts\BubbleSorter.cs" />
     <Compile Include="Sorts\SorterTools.cs" />

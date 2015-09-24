@@ -3,3 +3,8 @@ C:\Users\u0802791\Documents\2420-C-Sharp-Sorts-and-Data-Structures\SortsAndDataS
 C:\Users\u0802791\Documents\2420-C-Sharp-Sorts-and-Data-Structures\SortsAndDataStructures\obj\x86\Debug\SortsAndDataStructures.csprojResolveAssemblyReference.cache
 C:\Users\u0802791\Documents\2420-C-Sharp-Sorts-and-Data-Structures\SortsAndDataStructures\obj\x86\Debug\SortsAndDataStructures.exe
 C:\Users\u0802791\Documents\2420-C-Sharp-Sorts-and-Data-Structures\SortsAndDataStructures\obj\x86\Debug\SortsAndDataStructures.pdb
+C:\Users\Austin\Documents\EAE2420\2420-C-Sharp-Sorts-and-Data-Structures\SortsAndDataStructures\obj\x86\Debug\SortsAndDataStructures.exe
+C:\Users\Austin\Documents\EAE2420\2420-C-Sharp-Sorts-and-Data-Structures\SortsAndDataStructures\obj\x86\Debug\SortsAndDataStructures.pdb
+C:\Users\Austin\Documents\EAE2420\2420-C-Sharp-Sorts-and-Data-Structures\SortsAndDataStructures\obj\x86\Debug\SortsAndDataStructures.csprojResolveAssemblyReference.cache
+C:\Users\Austin\Documents\EAE2420\2420-C-Sharp-Sorts-and-Data-Structures\SortsAndDataStructures\bin\Debug\SortsAndDataStructures.exe
+C:\Users\Austin\Documents\EAE2420\2420-C-Sharp-Sorts-and-Data-Structures\SortsAndDataStructures\bin\Debug\SortsAndDataStructures.pdb
