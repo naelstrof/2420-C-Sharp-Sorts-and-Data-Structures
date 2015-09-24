@@ -1,18 +1,21 @@
-﻿class SelectionSorter{
-	public int[] Sort(int[] ints){
+﻿static class SelectionSorter{
+	static public int[] sort(int[] ints){
 		for ( int i=0;i<ints.Length;i++ ) {
-			int leastIndex = this.findLowestValueIndex(ints, i);
-			this.swap(ints, i, leastIndex);
+			int leastIndex = SelectionSorter.findLowestValueIndex(ints, i);
+			SelectionSorter.swap(ints, i, leastIndex);
 		}
-		return ints
+		return ints;
     }
-    public void swap(int index1, int index2, int[] ints){
+    static public void swap( int[] ints, int index1, int index2){
+		if ( index1 == index2 ) {
+			return;
+		}
         ints[index1] ^= ints[index2];
         ints[index2] ^= ints[index1];
         ints[index1] ^= ints[index2];
     }
-    public int findLowestValueIndex(int[] ints, int startRange){
-        int lowestIndex = 0;
+    static public int findLowestValueIndex(int[] ints, int startRange){
+        int lowestIndex = startRange;
         for (int i = startRange; i < ints.Length; i++){
             if (ints[i] < ints[lowestIndex]){
                 lowestIndex = i;

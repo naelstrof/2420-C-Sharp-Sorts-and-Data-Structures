@@ -2,7 +2,8 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="SortsAndDataStructures/Program.cs">
     <Files>
-      <File FileName="SortsAndDataStructures/Program.cs" Line="4" Column="1" />
+      <File FileName="SortsAndDataStructures/Program.cs" Line="6" Column="20" />
+      <File FileName="SortsAndDataStructures/Sorts/SelectionSorter.cs" Line="3" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

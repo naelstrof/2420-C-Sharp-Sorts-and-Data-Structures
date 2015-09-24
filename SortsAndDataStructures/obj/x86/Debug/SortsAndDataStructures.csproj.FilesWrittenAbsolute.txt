@@ -1,0 +1,5 @@
+/home/naelstrof/projects/2420/SortsAndDataStructures/SortsAndDataStructures/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/naelstrof/projects/2420/SortsAndDataStructures/SortsAndDataStructures/bin/Debug/SortsAndDataStructures.exe.mdb
+/home/naelstrof/projects/2420/SortsAndDataStructures/SortsAndDataStructures/bin/Debug/SortsAndDataStructures.exe
+/home/naelstrof/projects/2420/SortsAndDataStructures/SortsAndDataStructures/obj/x86/Debug/SortsAndDataStructures.exe
+/home/naelstrof/projects/2420/SortsAndDataStructures/SortsAndDataStructures/obj/x86/Debug/SortsAndDataStructures.exe.mdb
