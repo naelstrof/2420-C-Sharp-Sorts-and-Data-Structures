@@ -1,12 +1,15 @@
 ﻿using System;
 namespace SortsAndDataStructures {
-    static public class MergeSorter {
-        static public int[] sort(int[] ints, int left, int right) {
+    public class MergeSorter : ISorter {
+        public void sort(int[] ints) {
+            merge(ints, 0, ints.Length - 1);
+        }
+        public void merge(int[] ints, int left, int right) {
             if (left < right) {
                 int middle = (left + right) / 2;
 
-                MergeSorter.sort(ints, left, middle);
-                MergeSorter.sort(ints, middle + 1, right);
+                merge(ints, left, middle);
+                merge(ints, middle + 1, right);
 
                 int[] leftArray = new int[middle - left + 1];
                 int[] rightArray = new int[right - middle];
@@ -35,7 +38,6 @@ namespace SortsAndDataStructures {
                     }
                 }
             }
-            return ints;
         }
     }
 }
