@@ -10,6 +10,20 @@ namespace SortsAndDataStructures {
 	        ints[index2] ^= ints[index1];
 	        ints[index1] ^= ints[index2];
 	    }
+		static public bool sorted( int[] ints, int start = 0, int end = -1 ) {
+			if ( end == -1 ) {
+				end = ints.Length - 1;
+			}
+			if ( end - start <= 0 ) {
+				return true;
+			}
+			for ( int i = start; i < end; i++ ) {
+				if ( ints[i] >= ints[i+1] ) {
+					return false;
+				}
+			}
+			return true;
+		}
 		static public int findLowestValueIndex(int[] ints, int startRange, int endRange = -1){
 			if (endRange == -1) {
 				endRange = ints.Length;

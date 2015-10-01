@@ -41,6 +41,7 @@
     <Compile Include="Sorts\SelectionSorter.cs" />
     <Compile Include="Sorts\BubbleSorter.cs" />
     <Compile Include="Sorts\SorterTools.cs" />
+    <Compile Include="Sorts\QuickSorter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

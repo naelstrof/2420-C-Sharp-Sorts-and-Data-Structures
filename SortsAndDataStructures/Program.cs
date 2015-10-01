@@ -10,7 +10,7 @@ namespace SortsAndDataStructures {
 	    }
         public static void RunMySorts() {
             int[] ints = new int[] { 5, 22, 7, 84, -2 };
-            ISorter sorter = new MergeSorter();
+            ISorter sorter = new QuickSorter();
             sorter.sort(ints);
             //SelectionSorter.sort(ints);
             //ints = new int[] { 5, 22, 7, 84, -2 };
@@ -22,7 +22,7 @@ namespace SortsAndDataStructures {
             }
         }
         public static void AssertIfSorted(int[] ints) {
-            for (int i; i < ints.Length - 1; i++) {
+            for (int i = 0; i < ints.Length - 1; i++) {
                 Debug.Assert(ints[i] <= ints[i + 1]);
             }
         }
