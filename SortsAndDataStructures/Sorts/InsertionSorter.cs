@@ -1,8 +1,8 @@
 ﻿using System;
 
 namespace SortsAndDataStructures {
-    static public class InsertionSorter {
-        static public int[] sort(int[] ints) {
+    public class InsertionSorter : ISorter {
+        public void sort(int[] ints) {
             for (int i = 1; i < ints.Length; i++) {
                 int positionIndex = i;
                 while (positionIndex > 0 && (ints[positionIndex] < ints[positionIndex - 1])) {
@@ -10,7 +10,6 @@ namespace SortsAndDataStructures {
                     positionIndex--;
                 }
             }
-            return ints;
         }
     }
 }

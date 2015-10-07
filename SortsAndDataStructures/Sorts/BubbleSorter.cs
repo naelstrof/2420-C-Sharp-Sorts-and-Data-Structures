@@ -1,8 +1,8 @@
 ﻿using System;
 
 namespace SortsAndDataStructures {
-	static public class BubbleSorter {
-		static public int[] sort( int[] ints ) {
+	public class BubbleSorter : ISorter {
+		public void sort( int[] ints ) {
 			bool unsorted = true;
 			while (unsorted) {
 				unsorted = false;
@@ -13,7 +13,6 @@ namespace SortsAndDataStructures {
 					}
 				}
 			}
-			return ints;
 		}
 	}
 }
