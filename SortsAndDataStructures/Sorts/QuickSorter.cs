@@ -1,6 +1,7 @@
 ﻿using System;
 
 namespace SortsAndDataStructures {
+    //Performs a Quick sort.
 	 public class QuickSorter : ISorter {
 		public void sort( int[] ints ) {
 			quicksort (ints);

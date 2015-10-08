@@ -1,6 +1,7 @@
 ﻿using System;
 
 namespace SortsAndDataStructures {
+    //Performs an Insertion sort.
     public class InsertionSorter : ISorter {
         public void sort(int[] ints) {
             for (int i = 1; i < ints.Length; i++) {

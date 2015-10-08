@@ -1,5 +1,6 @@
 ﻿using System;
 namespace SortsAndDataStructures {
+    //Performs a Merge sort.
     public class MergeSorter : ISorter {
         public void sort(int[] ints) {
             merge(ints, 0, ints.Length - 1);

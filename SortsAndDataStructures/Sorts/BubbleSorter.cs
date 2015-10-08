@@ -1,6 +1,7 @@
 ﻿using System;
 
 namespace SortsAndDataStructures {
+    //Performs a Bubble sort.
 	public class BubbleSorter : ISorter {
 		public void sort( int[] ints ) {
 			bool unsorted = true;

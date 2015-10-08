@@ -6,14 +6,22 @@ namespace SortsAndDataStructures {
 		public static void Main (string[] args) {
             Console.WriteLine("Hello World!");
             //TestAllSorts();
-
-            MyList<string> list = new MyList<string>();
-            list.Add("8");
-            list.Add("22");
-            list.Add("13");
-            list.Add("91");
-            Console.WriteLine(list.Contains("8"));
+            int[] ints = new int[6];
+            MyList<int> list = new MyList<int>();
+            list.Add(8);
+            list.Add(22);
+            list.Add(13);
+            list.Add(91);
+            Console.WriteLine(list.Count);
+            //Console.WriteLine(list.Contains(8));
+            //list.CopyTo(ints, 0);
+            //for(int i = 0; i < ints.Length; i++)
+            //    Console.WriteLine(ints[i]);
+            //Console.WriteLine(list.IndexOf(22));
+            list.Insert(2, 55);
+            Console.WriteLine(list.Count);
 	    }
+        //Runs all the different kinds of sorts.
         public static void TestAllSorts() {
             TestSorter(new BubbleSorter());
             TestSorter(new InsertionSorter());
@@ -21,6 +29,7 @@ namespace SortsAndDataStructures {
             TestSorter(new QuickSorter());
             TestSorter(new SelectionSorter());
         }
+
         static void TestSorter(ISorter sorter) {
             int[] ints = new int[] { 5, 22, 7, 84, -2 };
             RunSorter(ints, sorter);
