@@ -46,7 +46,7 @@ namespace SortsAndDataStructures {
 
         //Checks in an array contains a given item.
         public bool Contains(T item) {
-            for (int i = 0; i < items.Length; i++) { 
+            for (int i = 0; i < numItems; i++) { 
                 if(items[i].Equals(item)) {
                     return true;
                 }
@@ -64,7 +64,7 @@ namespace SortsAndDataStructures {
 
         //Finds the index of an item in the list.
         public int IndexOf(T item) {
-            for (int i = 0; i < items.Length; i++) {
+            for (int i = 0; i < numItems; i++) {
                 if (items[i].Equals(item)) {
                     return i;
                 }
@@ -82,14 +82,28 @@ namespace SortsAndDataStructures {
             numItems++;
         }
 
-        public bool Remove(T item)
-        {
-            throw new System.NotImplementedException();
+        //Removes the first instance of a value.
+        public bool Remove(T item) {
+            for (int index = 0; index < numItems; index++) {
+                if (items[index].Equals(item)) {
+                    for (int workIndex = index; workIndex < numItems - 1; workIndex++) {
+                        items[workIndex] = items[workIndex + 1];
+                    }
+                    numItems--;
+                    return true;
+                }
+            }
+            return false;
         }
 
-        public void RemoveAt(int index)
-        {
-            throw new System.NotImplementedException();
+        //Removes the value at given index.
+        public void RemoveAt(int index) {
+            if (index < numItems) {
+                for (int workingIndex = index; workingIndex < numItems - 1; workingIndex++) {
+                    items[workingIndex] = items[workingIndex + 1];
+                }
+                numItems--;
+            }
         }
 
         public T this[int index]
