@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace SortsAndDataStructures {
     //Class to build and manipulate arrays.
-    class MyList<T> : IList<T> {
+    public class MyList<T> : IList<T> {
         public T[] items = new T[2];
         public int numItems = 0;
 
@@ -106,15 +106,24 @@ namespace SortsAndDataStructures {
             }
         }
 
-        public T this[int index]
-        {
-            get
-            {
-                throw new System.NotImplementedException();
+        public T this[int index] {
+            get {
+                if (index >= 0 && index < numItems)
+                {
+                    return items[index];
+                }
+                else {
+                    throw new System.IndexOutOfRangeException();
+                }
             }
-            set
-            {
-                throw new System.NotImplementedException();
+            set {
+                if (index > 0 && index < numItems)
+                {
+                    items[index] = value;
+                }
+                else {
+                    throw new System.IndexOutOfRangeException();
+                }
             }
         }
 
