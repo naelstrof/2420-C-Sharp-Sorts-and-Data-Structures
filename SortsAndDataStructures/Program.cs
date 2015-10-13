@@ -4,9 +4,66 @@ using System.Diagnostics;
 namespace SortsAndDataStructures {
     class MainClass {
         public static void Main(string[] args) {
-            Console.WriteLine("Hello World!");
-            //TestMyList();
+            TestMyList();
+			Console.WriteLine (" ---------- Sorter Timings ------------");
+			TimeSort ("BubbleSorter", new BubbleSorter ());
+			TimeSort ("InsertionSorter", new InsertionSorter());
+			TimeSort ("MergeSorter", new MergeSorter());
+			TimeSort ("QuickSorter", new QuickSorter());
+			TimeSort ("SelectionSorter", new SelectionSorter());
+			Console.WriteLine (" ---------- MyList Timings ------------");
+			TimeFunction ("TestCount", TestCount );
+			TimeFunction ("TestAdd", TestAdd );
+			TimeFunction ( "TestClear", TestClear );
+			TimeFunction ( "TestContains", TestContains );
+			TimeFunction ( "TestCopyTo", TestCopyTo );
+			TimeFunction ( "TestIndexOf", TestIndexOf );
+			TimeFunction ( "TestInsert", TestInsert );
+			TimeFunction ( "TestRemove", TestRemove );
+			TimeFunction ( "TestRemoveAt", TestRemoveAt );
         }
+
+		public delegate void timeFunction(MyList<int> IList );
+
+		public static double TimeFunction( string name, timeFunction testFunction, int iterations = 100000 ) {
+			Stopwatch watch = new Stopwatch ();
+			watch.Start ();
+			for ( int i =0;i<iterations;i++ ){
+				testFunction (new MyList<int>());
+			}
+			watch.Stop ();
+			double time = ((double)watch.ElapsedMilliseconds)/(iterations);
+			Console.WriteLine ( name +"\t took an average of " + time + " miliseconds.");
+			return time;
+		}
+
+		// Stopwatches the time it takes to do various sorts. Uses iterations to increase accuracy.
+		public static double TimeSort( string name, ISorter SortFunction, int iterations = 100000) {
+			Stopwatch watch = new Stopwatch ();
+			int[] array = new int[]{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 };
+			watch.Start ();
+			for ( int i =0;i<iterations;i++ ){
+				SortFunction.sort (array);
+				// Reset
+			    array = new int[]{ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 };
+			}
+			array = new int[]{ 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+			for ( int i =0;i<iterations;i++ ){
+				SortFunction.sort (array);
+				// Reset
+				array = new int[]{ 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 };
+			}
+			array = new int[]{ 20, 1, 19, 2, 18, 3, 17, 4, 16, 5, 15, 6, 14, 7, 13, 8, 12, 9, 11, 10 };
+			for ( int i =0;i<iterations;i++ ){
+				SortFunction.sort (array);
+				// Reset
+			    array = new int[]{ 20, 1, 19, 2, 18, 3, 17, 4, 16, 5, 15, 6, 14, 7, 13, 8, 12, 9, 11, 10 };
+			}
+			watch.Stop ();
+			double time = ((double)watch.ElapsedMilliseconds)/(iterations);
+			Console.WriteLine ( name +"\t took an average of " + time + " miliseconds.");
+			return time;
+		}
 
         //Tests the MyList functions.
         public static void TestMyList() {
@@ -26,7 +83,7 @@ namespace SortsAndDataStructures {
             Debug.Assert(Count == 0);
             inList.Add(2);
             Count = inList.Count;
-            Debug.Assert(Count == 0);
+            Debug.Assert(Count == 1);
         }
 
         public static void TestAdd(MyList<int> Inlist) {

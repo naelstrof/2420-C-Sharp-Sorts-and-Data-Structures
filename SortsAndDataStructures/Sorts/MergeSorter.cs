@@ -1,4 +1,9 @@
 ﻿using System;
+
+// Big O for MergeSorter is O(n^2*lg(n)). This merge sort is recursive, thus, giving lg(n) steps to the problem, for
+// each step of the problem it copies the entire array (n), then sorts them (n). Giving us the final equation
+// n^2*lg(n), in reality though it shouldn't be copying the entire array. Which would give a normal merge sort
+// a growth rate of O(n*lg(n)).
 namespace SortsAndDataStructures {
     //Performs a Merge sort.
     public class MergeSorter : ISorter {

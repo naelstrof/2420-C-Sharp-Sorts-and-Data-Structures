@@ -33,7 +33,6 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sorts\InsertionSorter.cs" />
@@ -43,6 +42,11 @@
     <Compile Include="Sorts\BubbleSorter.cs" />
     <Compile Include="Sorts\SorterTools.cs" />
     <Compile Include="Sorts\QuickSorter.cs" />
+    <Compile Include="Lists\IList.cs" />
+    <Compile Include="Lists\MyList.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Lists\" />
+  </ItemGroup>
 </Project>

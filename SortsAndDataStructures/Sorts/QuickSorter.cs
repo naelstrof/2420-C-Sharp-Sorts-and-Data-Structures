@@ -1,5 +1,8 @@
 ﻿using System;
 
+// Big O for QuickSort is O(n * lg(n)) and the reasoning behind it is quite simple actually.
+// Being recursive means there is lg(n) steps to the problem. For each step you will do one pass
+// on the entire array (n) making the Big O notation O(n*lg(n))
 namespace SortsAndDataStructures {
     //Performs a Quick sort.
 	 public class QuickSorter : ISorter {

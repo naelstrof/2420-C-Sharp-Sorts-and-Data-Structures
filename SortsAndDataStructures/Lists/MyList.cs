@@ -4,15 +4,15 @@ using System.Collections;
 namespace SortsAndDataStructures {
 	public class MyListEnum<T> : IEnumerator<T> {
 		public int current = -1;
-		public T[] array;
+		public MyList<T> list;
 
-		public MyListEnum( T[] array ) {
-			this.array = array;
+		public MyListEnum( MyList<T> list ) {
+			this.list = list;
 		}
 
 		public bool MoveNext () {
 			current++;
-			return current < array.Length;
+			return current < list.numItems;
 		}
 
 		object IEnumerator.Current {
@@ -23,7 +23,7 @@ namespace SortsAndDataStructures {
 
 		public T Current {
 			get {
-				return array [current];
+				return list.items[current];
 			}
 		}
 
@@ -39,6 +39,11 @@ namespace SortsAndDataStructures {
         public T[] items = new T[2];
         public int numItems = 0;
 
+		public IEnumerable<T> All() {
+			for (int i=0;i<this.numItems;i++ ) {
+				yield return this[i];
+			}
+		}
         //Doubles the size of the array if needed.
         public void ResizeIfNecessary() {
             while (numItems >= items.Length) {
@@ -166,7 +171,9 @@ namespace SortsAndDataStructures {
 
         public IEnumerator<T> GetEnumerator()
         {
-			return new MyListEnum<T> (this.items);
+			// For yield version:
+			// return this.All()
+			return new MyListEnum<T> (this);
         }
     }
 }
