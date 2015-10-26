@@ -21,6 +21,8 @@ namespace SortsAndDataStructures {
 			TimeFunction ( "TestInsert", TestInsert );
 			TimeFunction ( "TestRemove", TestRemove );
 			TimeFunction ( "TestRemoveAt", TestRemoveAt );
+            Console.WriteLine(" ---------- Sorter Assertions ----------");
+            TestAllSorts();
         }
 
 		public delegate void timeFunction(MyList<int> IList );
@@ -34,6 +36,7 @@ namespace SortsAndDataStructures {
 			watch.Stop ();
 			double time = ((double)watch.ElapsedMilliseconds)/(iterations);
 			Console.WriteLine ( name +"\t took an average of " + time + " miliseconds.");
+            Console.WriteLine(name + "\t is working properly.");
 			return time;
 		}
 
@@ -123,41 +126,72 @@ namespace SortsAndDataStructures {
             }
         }
 
-        public static void TestIndexOf(MyList<int> Inlist) { }
+        public static void TestIndexOf(MyList<int> Inlist) {
+            Inlist.Add(3);
+            Inlist.Add(4);
+            Inlist.Add(5);
+            Debug.Assert(Inlist.IndexOf(3) == 0);
+            Debug.Assert(Inlist.IndexOf(4) == 1);
+            Debug.Assert(Inlist.IndexOf(5) == 2);
+        }
 
-        public static void TestInsert(MyList<int> Inlist) { }
+        public static void TestInsert(MyList<int> Inlist) {
+            Inlist.Add(0);
+            Inlist.Add(1);
+            Inlist.Add(2);
+            Inlist.Add(3);
+            Inlist.Add(4);
+            Inlist.Insert(3, 5);
+            Debug.Assert(Inlist[3] == 5);
+        }
 
-        public static void TestRemove(MyList<int> Inlist) { }
+        public static void TestRemove(MyList<int> Inlist) {
+            Inlist.Add(0);
+            Inlist.Add(1);
+            Inlist.Add(2);
+            Inlist.Add(3);
+            Inlist.Add(4);
+            Inlist.Remove(2);
+            Debug.Assert(Inlist[2] != 2);
+        }
 
-        public static void TestRemoveAt(MyList<int> Inlist) { }
+        public static void TestRemoveAt(MyList<int> Inlist) {
+            Inlist.Add(1);
+            Inlist.Add(2);
+            Inlist.Add(3);
+            Inlist.Add(4);
+            Inlist.Add(5);
+            Inlist.RemoveAt(3);
+            Debug.Assert(Inlist[3] == 5);
+        }
 
 
         
         //Runs all the different kinds of sorts.
         public static void TestAllSorts() {
-            TestSorter(new BubbleSorter());
-            TestSorter(new InsertionSorter());
-            TestSorter(new MergeSorter());
-            TestSorter(new QuickSorter());
-            TestSorter(new SelectionSorter());
+            TestSorter(new BubbleSorter(), "BubbleSorter");
+            TestSorter(new InsertionSorter(), "InsertionSorter");
+            TestSorter(new MergeSorter(), "MergeSorter");
+            TestSorter(new QuickSorter(), "QuickSorter");
+            TestSorter(new SelectionSorter(), "SelectionSorter");
         }
 
-        static void TestSorter(ISorter sorter) {
+        static void TestSorter(ISorter sorter, string name) {
             int[] ints = new int[] { 5, 22, 7, 84, -2 };
-            RunSorter(ints, sorter);
-            ints = new int[] { 4 };
-            RunSorter(ints, sorter);
-            //ints = new int[] { 1, 6, 4, 3, 4, 6, 2, 2, 3, 4, 6, 2, 5, 5, 23465, 2, 46, 2, 34, 6, 2, 34, 6, 2, 4, 62, 5, 62, 456, 3, 45, 63, 45, 6, 3, 45, 61, 451, 13, 3456, 734, 576, 37, 4576, 345, 621, 243, 6, 245, 63, 345, 6, 4, 3, 56, 3, 345, 673, 3457, 345, 3456, 34, 4356, 34, 56, 38, 658, 67, 5, 562, 1, 1458, 2, 15, 78, 82, 1, 43, 678, 113, 346, 7 };
-            //RunSorter(ints, sorter);
+            RunSorter(ints, sorter, name);
+            
         }
-        static void RunSorter(int[] ints, ISorter sorter) {
+
+        static void RunSorter(int[] ints, ISorter sorter, string name) {
             sorter.sort(ints);
-            AssertIfSorted(ints);
+            AssertIfSorted(ints, name);
         }
-        public static void AssertIfSorted(int[] ints) {
+
+        public static void AssertIfSorted(int[] ints, string name) {
             for (int i = 0; i < ints.Length - 1; i++) {
                 Debug.Assert(ints[i] <= ints[i + 1]);
             }
+            Console.WriteLine(name + "\t has properly sorted it's array.");
         }
 	}
 }
