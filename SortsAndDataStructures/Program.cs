@@ -3,15 +3,24 @@ using System.Diagnostics;
 
 namespace SortsAndDataStructures {
     class MainClass {
+		public static void a( string action ) {
+			Console.Write ("Testing " + action + "...");
+		}
+		public static void b() {
+			Console.WriteLine ("It works!");
+		}
         public static void Main(string[] args) {
-            TestMyList();
-			Console.WriteLine (" ---------- Sorter Timings ------------");
+			Console.WriteLine (" --------- MyList Assertions ----------");
+			TestMyList ();
+			Console.WriteLine (" --------- Sorter Assertions ----------");
+			TestAllSorts();
+			Console.WriteLine (" ----------- Sorter Timings -----------");
 			TimeSort ("BubbleSorter", new BubbleSorter ());
 			TimeSort ("InsertionSorter", new InsertionSorter());
 			TimeSort ("MergeSorter", new MergeSorter());
 			TimeSort ("QuickSorter", new QuickSorter());
 			TimeSort ("SelectionSorter", new SelectionSorter());
-			Console.WriteLine (" ---------- MyList Timings ------------");
+			Console.WriteLine (" ----------- MyList Timings -----------");
 			TimeFunction ("TestCount", TestCount );
 			TimeFunction ("TestAdd", TestAdd );
 			TimeFunction ( "TestClear", TestClear );
@@ -20,9 +29,8 @@ namespace SortsAndDataStructures {
 			TimeFunction ( "TestIndexOf", TestIndexOf );
 			TimeFunction ( "TestInsert", TestInsert );
 			TimeFunction ( "TestRemove", TestRemove );
-			TimeFunction ( "TestRemoveAt", TestRemoveAt );
-            Console.WriteLine(" ---------- Sorter Assertions ----------");
-            TestAllSorts();
+			TimeFunction ("TestRemoveAt", TestRemoveAt);
+
         }
 
 		public delegate void timeFunction(MyList<int> IList );
@@ -36,7 +44,6 @@ namespace SortsAndDataStructures {
 			watch.Stop ();
 			double time = ((double)watch.ElapsedMilliseconds)/(iterations);
 			Console.WriteLine ( name +"\t took an average of " + time + " miliseconds.");
-            Console.WriteLine(name + "\t is working properly.");
 			return time;
 		}
 
@@ -70,15 +77,33 @@ namespace SortsAndDataStructures {
 
         //Tests the MyList functions.
         public static void TestMyList() {
+			a ("Mylist.count()");
             TestCount(new MyList<int>());
+			b ();
+			a ("MyList.add(3)");
             TestAdd(new MyList<int>());
+			b ();
+			a ("MyList.clear()");
             TestClear(new MyList<int>());
+			b ();
+			a ("MyList.contains(3)");
             TestContains(new MyList<int>());
+			b ();
+			a ("MyList.copyTo( list2, 2 )");
             TestCopyTo(new MyList<int>());
+			b ();
+			a ("MyList.indexOf( 3 )");
             TestIndexOf(new MyList<int>());
+			b ();
+			a ("MyList.insert(3,5)");
             TestInsert(new MyList<int>());
+			b ();
+			a ("MyList.remove(3)");
             TestRemove(new MyList<int>());
+			b ();
+			a ("MyList.removeAt(3)");
             TestRemoveAt(new MyList<int>());
+			b ();
         }
 
         public static void TestCount(MyList<int> inList) {
@@ -177,6 +202,7 @@ namespace SortsAndDataStructures {
         }
 
         static void TestSorter(ISorter sorter, string name) {
+			a (name);
             int[] ints = new int[] { 5, 22, 7, 84, -2 };
             RunSorter(ints, sorter, name);
             
@@ -191,7 +217,7 @@ namespace SortsAndDataStructures {
             for (int i = 0; i < ints.Length - 1; i++) {
                 Debug.Assert(ints[i] <= ints[i + 1]);
             }
-            Console.WriteLine(name + "\t has properly sorted it's array.");
+			b ();
         }
 	}
 }
